@@ -150,11 +150,11 @@ public class MainView extends View {
 
     private void drawCellText(Canvas canvas, int value) {
         int textShiftY = centerText();
-        if (value >= 8) {
-            paint.setColor(getResources().getColor(R.color.text_white));
-        } else {
+//        if (value >= 8) {
+//            paint.setColor(getResources().getColor(R.color.text_white));
+//        } else {
             paint.setColor(getResources().getColor(R.color.text_black));
-        }
+//        }
         canvas.drawText("" + value, cellSize / 2, cellSize / 2 - textShiftY, paint);
     }
 
