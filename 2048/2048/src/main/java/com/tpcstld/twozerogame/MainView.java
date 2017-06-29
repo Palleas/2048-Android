@@ -56,6 +56,7 @@ public class MainView extends View {
     private int iconPaddingSize;
     //Assets
     private Drawable backgroundRectangle;
+    private Drawable backgroundScoreBox;
     private Drawable lightUpRectangle;
     private Drawable fadeRectangle;
     private Bitmap background = null;
@@ -78,6 +79,7 @@ public class MainView extends View {
         try {
             //Getting assets
             backgroundRectangle = getDrawable(R.drawable.background_rectangle);
+            backgroundScoreBox = getDrawable(R.drawable.background_scorebox);
             lightUpRectangle = getDrawable(R.drawable.light_up_rectangle);
             fadeRectangle = getDrawable(R.drawable.fade_rectangle);
             this.setBackgroundColor(getResources().getColor(R.color.background));
@@ -179,24 +181,24 @@ public class MainView extends View {
         int sXScore = eXScore - textWidthScore;
 
         //Outputting high-scores box
-        backgroundRectangle.setBounds(sXHighScore, sYAll, eXHighScore, eYAll);
-        backgroundRectangle.draw(canvas);
+        backgroundScoreBox.setBounds(sXHighScore, sYAll, eXHighScore, eYAll);
+        backgroundScoreBox.draw(canvas);
         paint.setTextSize(titleTextSize);
-        paint.setColor(getResources().getColor(R.color.text_brown));
+        paint.setColor(getResources().getColor(R.color.text_black));
         canvas.drawText(getResources().getString(R.string.high_score), sXHighScore + textMiddleHighScore, titleStartYAll, paint);
         paint.setTextSize(bodyTextSize);
-        paint.setColor(getResources().getColor(R.color.text_white));
+        paint.setColor(getResources().getColor(R.color.text_black));
         canvas.drawText(String.valueOf(game.highScore), sXHighScore + textMiddleHighScore, bodyStartYAll, paint);
 
 
         //Outputting scores box
-        backgroundRectangle.setBounds(sXScore, sYAll, eXScore, eYAll);
-        backgroundRectangle.draw(canvas);
+        backgroundScoreBox.setBounds(sXScore, sYAll, eXScore, eYAll);
+        backgroundScoreBox.draw(canvas);
         paint.setTextSize(titleTextSize);
-        paint.setColor(getResources().getColor(R.color.text_brown));
+        paint.setColor(getResources().getColor(R.color.text_black));
         canvas.drawText(getResources().getString(R.string.score), sXScore + textMiddleScore, titleStartYAll, paint);
         paint.setTextSize(bodyTextSize);
-        paint.setColor(getResources().getColor(R.color.text_white));
+        paint.setColor(getResources().getColor(R.color.text_black));
         canvas.drawText(String.valueOf(game.score), sXScore + textMiddleScore, bodyStartYAll, paint);
     }
 
